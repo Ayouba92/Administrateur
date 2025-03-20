@@ -59,7 +59,7 @@ class PageAcceuil extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context, 
                       MaterialPageRoute(builder: (context){
-                        return const Infos();
+                        return Infos();
                       })
                       );
                 },
