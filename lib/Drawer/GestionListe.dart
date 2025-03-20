@@ -8,8 +8,10 @@ class Listes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Résultat",style: TextStyle(
-          fontSize: 25,fontWeight: FontWeight.bold)),
+        title: Center(
+          child: const Text("Listes",style: TextStyle(
+            fontSize: 25,fontWeight: FontWeight.bold)),
+        ),
         backgroundColor:Colors.deepOrange,
       ),
       body: FileImportWidget()

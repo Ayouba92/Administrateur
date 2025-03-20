@@ -8,218 +8,103 @@ class Resultat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: const Text("Résultat",style: TextStyle(
-            fontSize: 25,fontWeight: FontWeight.bold)),
+        title: const Center(
+          child: Text(
+            "Résultat",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
         ),
-        backgroundColor:Colors.deepOrange,
+        backgroundColor: Colors.deepOrange,
       ),
-      body: FileImportWidget()
-      );
+      body: const FileImportWidget(),
+    );
   }
 }
 
 class FileImportWidget extends StatefulWidget {
+  const FileImportWidget({super.key});
+
   @override
   _FileImportWidgetState createState() => _FileImportWidgetState();
 }
 
 class _FileImportWidgetState extends State<FileImportWidget> {
-  String? selectedFile;
+  final Map<String, String?> selectedFiles = {};
 
-  Future<void> pickFile() async {
+  Future<void> pickFile(String category) async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
 
     if (result != null) {
       setState(() {
-        selectedFile = result.files.single.name; // Nom du fichier sélectionné
+        selectedFiles[category] = result.files.single.name; // Nom du fichier
       });
     }
+  }
+
+  Widget buildFileRow(String category) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          '$category : ',
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        ElevatedButton(
+          onPressed: () => pickFile(category),
+          style: ButtonStyle(
+            foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+            backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
+          ),
+          child: const Text('Importer'),
+        ),
+        if (selectedFiles[category] != null)
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(
+              'Fichier : ${selectedFiles[category]}',
+              style: const TextStyle(fontSize: 16, color: Colors.green),
+            ),
+          ),
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ListView(
-        children: [Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'GME : ',
-              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: pickFile,
+        children: [
+          const SizedBox(height: 15),
+          buildFileRow("GME"),
+          const SizedBox(height: 5),
+          buildFileRow("GC"),
+          const SizedBox(height: 5),
+          buildFileRow("GEEA"),
+          const SizedBox(height: 5),
+          buildFileRow("Geol-Mine"),
+          const SizedBox(height: 5),
+          buildFileRow("Topo"),
+          const SizedBox(height: 5),
+          buildFileRow("GIT"),
+          const SizedBox(height: 15),
+          SizedBox(
+            height: 50,
+            width: 500,
+            child: ElevatedButton(
+              onPressed: () {
+                // Ajouter la logique pour l'envoi ici
+              },
               style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
-              child: Text('Importer'),
-            ),
-            if (selectedFile != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Fichier : $selectedFile',
-                  style: TextStyle(fontSize: 16, color: Colors.green),
-                ),
+                foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
               ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'GC : ',
-              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: pickFile,
-              style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
-              child: Text('Importer'),
-            ),
-            if (selectedFile != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Fichier : $selectedFile',
-                  style: TextStyle(fontSize: 16, color: Colors.green),
-                ),
-              ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'GEEA : ',
-              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: pickFile,
-              style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
-              child: Text('Importer'),
-            ),
-            if (selectedFile != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Fichier : $selectedFile',
-                  style: TextStyle(fontSize: 16, color: Colors.green),
-                ),
-              ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Geol-Mine : ',
-              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: pickFile,
-              style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
-              child: Text('Importer'),
-            ),
-            if (selectedFile != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Fichier : $selectedFile',
-                  style: TextStyle(fontSize: 16, color: Colors.green),
-                ),
-              ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Topo : ',
-              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: pickFile,
-              style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
-              child: Text('Importer'),
-            ),
-            if (selectedFile != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Fichier : $selectedFile',
-                  style: TextStyle(fontSize: 16, color: Colors.green),
-                ),
-              ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'GIT : ',
-              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: pickFile,
-              style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
-              child: Text('Importer'),
-              
-            ),
-            if (selectedFile != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Fichier : $selectedFile',
-                  style: TextStyle(fontSize: 16, color: Colors.green),
-                ),
-              ),
-          ],
-        ),
-        const SizedBox(height: 15),
-        SizedBox(
-          height: 50,
-          width: 500,
-          child: ElevatedButton(
-            
-            onPressed: (){
-              // Navigator.pushReplacement(context, 
-              // MaterialPageRoute(builder:(context){
-                  
-              // }));
-              
-            },
-            style: ButtonStyle(
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
-            ),
               child: const Text(
-              "Envoyer ",
-              style: const TextStyle(
-                fontSize: 20
+                "Envoyer",
+                style: TextStyle(fontSize: 20),
               ),
-              )
-              ),
-        ),
-        
-
-        ]
+            ),
+          ),
+        ],
       ),
     );
   }
