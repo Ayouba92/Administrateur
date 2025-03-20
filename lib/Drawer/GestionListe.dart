@@ -1,3 +1,4 @@
+import 'package:admin/Drawer/GestionResultat.dart';
 import 'package:flutter/material.dart';
 
 class Listes extends StatelessWidget {
@@ -5,6 +6,13 @@ class Listes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Résultat",style: TextStyle(
+          fontSize: 25,fontWeight: FontWeight.bold)),
+        backgroundColor:Colors.deepOrange,
+      ),
+      body: FileImportWidget()
+    );
   }
 }
