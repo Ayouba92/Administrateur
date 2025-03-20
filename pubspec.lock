@@ -40,11 +40,7 @@ packages:
       sha256: "2f5709ae4d3d59dd8f7cd309b4e023046b57d8a6c82130785d2b0e5868084e76"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "1.19.0"
-=======
     version: "1.19.1"
->>>>>>> cbc1fa2b66ddddaf50a130ba961ae1253f29d20c
   cross_file:
     dependency: transitive
     description:
@@ -68,41 +64,31 @@ packages:
       sha256: "6a95e56b2449df2273fd8c45a662d6947ce1ebb7aafe80e550a3f68297f3cacc"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "1.3.1"
-=======
     version: "1.3.2"
->>>>>>> cbc1fa2b66ddddaf50a130ba961ae1253f29d20c
   ffi:
     dependency: transitive
     description:
       name: ffi
-<<<<<<< HEAD
       sha256: "16ed7b077ef01ad6170a3d0c57caa4a112a38d7a2ed5602e0aca9ca6f3d98da6"
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
-=======
       sha256: "289279317b4b16eb2bb7e271abccd4bf84ec9bdcbe999e278a94b804f5630418"
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
->>>>>>> cbc1fa2b66ddddaf50a130ba961ae1253f29d20c
   file_picker:
     dependency: "direct main"
     description:
       name: file_picker
-<<<<<<< HEAD
       sha256: "127d84b954527b2a59208c5cba556d8fb9078538f41ec869a56651f72f212a4b"
       url: "https://pub.dev"
     source: hosted
     version: "9.2.0"
-=======
       sha256: "8d938fd5c11dc81bf1acd4f7f0486c683fe9e79a0b13419e27730f9ce4d8a25b"
       url: "https://pub.dev"
     source: hosted
     version: "9.2.1"
->>>>>>> cbc1fa2b66ddddaf50a130ba961ae1253f29d20c
   flutter:
     dependency: "direct main"
     description: flutter
@@ -221,11 +207,7 @@ packages:
       sha256: "75cca69d1490965be98c73ceaea117e8a04dd21217b37b292c9ddbec0d955bc5"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "1.9.0"
-=======
     version: "1.9.1"
->>>>>>> cbc1fa2b66ddddaf50a130ba961ae1253f29d20c
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -331,19 +313,16 @@ packages:
     dependency: transitive
     description:
       name: win32
-<<<<<<< HEAD
       sha256: daf97c9d80197ed7b619040e86c8ab9a9dad285e7671ee7390f9180cc828a51e
       url: "https://pub.dev"
     source: hosted
     version: "5.10.1"
 sdks:
   dart: ">=3.6.0 <4.0.0"
-=======
       sha256: dc6ecaa00a7c708e5b4d10ee7bec8c270e9276dfcab1783f57e9962d7884305f
       url: "https://pub.dev"
     source: hosted
     version: "5.12.0"
 sdks:
   dart: ">=3.7.0 <4.0.0"
->>>>>>> cbc1fa2b66ddddaf50a130ba961ae1253f29d20c
   flutter: ">=3.27.0"

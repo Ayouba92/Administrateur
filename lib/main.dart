@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 void main(){
   return runApp(Page1());
 }
-
 class Page1 extends StatelessWidget {
   const Page1({super.key});
 
