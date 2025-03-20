@@ -83,65 +83,6 @@ class _PageAcceuilState extends State<PageAcceuil> {
                 ],
               ),
               ),
-              //liste des options
-              InkWell(
-                splashColor: Colors.deepOrange,
-                onTap: () {
-                    Navigator.push(context, 
-                      MaterialPageRoute(builder: (context){
-                        return PageAcceuil();
-                      })
-                      );
-                  },
-                child: const ListTile(
-                  leading: Icon(Icons.home, color:  Colors.orange),
-                  title: Text("Accueil"),
-                  
-                ),
-              ),
-              InkWell(
-                splashColor: Colors.deepOrange,
-                onTap: () {
-                  Navigator.push(context, 
-                      MaterialPageRoute(builder: (context){
-                        return Infos();
-                      })
-                      );
-                },
-                child: const ListTile(
-                  leading: Icon(Icons.notifications, color:  Colors.orange),
-                  title: Text("Infos Concours"),
-                  
-                ),
-              ),
-              InkWell(
-                splashColor: Colors.deepOrange,
-                onTap: () {
-                    Navigator.push(context, 
-                      MaterialPageRoute(builder: (context){
-                        return const Resultat();
-                      })
-                      );
-                  },
-                child: const ListTile(
-                  leading: Icon(Icons.settings, color:  Colors.orange),
-                  title: Text("Gestion de Résultats"),
-                  
-                ),
-              ),
-              InkWell(
-                splashColor: Colors.deepOrange,
-                onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return const Listes();
-                    }));
-                  },
-                child: const ListTile(
-                  leading: Icon(Icons.help, color:  Colors.orange),
-                  title: Text("Gestion des Listes"),
-                  
-                ),
-              ),
             ListTile(
               leading: const Icon(Icons.home, color: Colors.orange),
               title: const Text("Accueil"),

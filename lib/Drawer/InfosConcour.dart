@@ -99,7 +99,11 @@ class _InfosState extends State<Infos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Gestion des Fichiers")),
+      appBar: AppBar(
+        title: Center(child: Text("Gestion des Fichiers",
+        style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
+        backgroundColor: Colors.deepOrange,
+        ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -119,10 +123,14 @@ class _InfosState extends State<Infos> {
               onPressed: isLoading ? null : selectionEtEnvoi,
               icon: Icon(Icons.upload_file),
               label: Text("Envoyer le fichier"),
-              style: ElevatedButton.styleFrom(
+              style: ButtonStyle(
+                foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.deepOrange),
+              ),
+             /* style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
                 textStyle: TextStyle(fontSize: 16),
-              ),
+              ),*/
             ),
             SizedBox(height: 20),
             if (isLoading) CircularProgressIndicator(), // 🔄 Indicateur de progression
