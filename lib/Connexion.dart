@@ -22,7 +22,7 @@ class _connexionState extends State<connexion> {
   //Une fonction future pour envoyer les data
   Future<void> SeConnecter() async{
     final respose=await http.post(
-      Uri.parse('http://192.168.1.21:5000/Login'),
+      Uri.parse('http://192.168.1.14:5000/Login'),
       headers: {"Content-Type": "application/json"},
       body:convert.jsonEncode({
         "email":emailController.text,
