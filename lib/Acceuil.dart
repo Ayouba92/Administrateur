@@ -25,7 +25,7 @@ class _PageAcceuilState extends State<PageAcceuil> {
 
   // Fonction pour récupérer les étudiants
   Future<void> fetchStudents() async {
-    final response = await http.get(Uri.parse("http://192.168.0.106:5000/students"));
+    final response = await http.get(Uri.parse("http://192.168.1.14:5000/students"));
 
     if (response.statusCode == 200) {
       setState(() {
@@ -61,7 +61,7 @@ class _PageAcceuilState extends State<PageAcceuil> {
             padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage("Assets/ENI_ABT.png"),
+              backgroundImage: AssetImage("ENI_ABT.png"),
             ),
 
           )

@@ -21,7 +21,7 @@ class _StudentDetailsState extends State<StudentDetails> {
     });
 
     final response = await http.post(
-      Uri.parse("http://192.168.0.110:5000/validate_student"),
+      Uri.parse("http://192.168.1.14:5000/validate_student"),
       headers: {"Content-Type": "application/json"},
       body: json.encode({"id_user": widget.student['id_user']}),
     );
@@ -49,7 +49,7 @@ class _StudentDetailsState extends State<StudentDetails> {
     });
 
     final response = await http.post(
-      Uri.parse("http://192.168.0.110:5000/reject_student"),
+      Uri.parse("http://192.168.1.14:5000/reject_student"),
       headers: {"Content-Type": "application/json"},
       body: json.encode({"id_user": widget.student['id_user']}),
     );
